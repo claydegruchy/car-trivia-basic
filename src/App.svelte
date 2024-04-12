@@ -10,7 +10,7 @@
 
   let refreshing = true;
   let help = false;
-  let category;
+  let category = "p";
   let difficulty = "";
 
   function refreshQuestions() {
@@ -62,7 +62,7 @@
       <div>
         <h3>Category selection</h3>
 
-        <div>
+        <div class="categories">
           <div>
             <input
               type="radio"
@@ -355,5 +355,11 @@
 
   .help {
     white-space: pre-wrap;
+  }
+
+  .categories {
+    /* align left */
+    text-align: left;
+    
   }
 </style>
