@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base /car-trivia-basic/ --outDir ./docs",
     "preview": "vite preview"
   },
   "devDependencies": {
