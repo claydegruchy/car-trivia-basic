@@ -10,7 +10,7 @@
 
   let refreshing = true;
   let help = false;
-  let category = "p";
+  let category = "";
   let difficulty = "";
 
   function refreshQuestions() {
