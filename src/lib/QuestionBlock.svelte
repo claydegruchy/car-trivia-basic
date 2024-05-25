@@ -8,6 +8,16 @@
     textarea.remove();
     return v;
   }
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  let answers = [...question.incorrect_answers, ">" + question.correct_answer];
+  shuffleArray(answers);
   console.log(question);
 </script>
 
@@ -24,13 +34,25 @@
     <div class="question-text">{decodeHTMLEntities(question.question)}</div>
   </div>
   <div class="answers">
-    <div class="answer correct">
+    <!-- <div class="answer correct">
       {decodeHTMLEntities(question.correct_answer)}
     </div>
-    {#each question.incorrect_answers as answer, index}
-      <div class="answer incorrect">
+    {#each answers as answer, index}
+      <div class="answer">
         {decodeHTMLEntities(answer)}
       </div>
+    {/each} -->
+
+    {#each answers as answer, index}
+      {#if answer.startsWith(">")}
+        <div class="answer correct">
+          {decodeHTMLEntities(answer)}
+        </div>
+      {:else}
+        <div class="answer incorrect">
+          {decodeHTMLEntities(answer)}
+        </div>
+      {/if}
     {/each}
   </div>
 </div>
